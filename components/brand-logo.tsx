@@ -5,11 +5,12 @@ import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 
 /**
- * Renders the SharpsB2B wordmark, swapping between black and white variants
- * based on the active theme. Used by the navbar, footer, and login page.
+ * Renders the SharpsB2B wordmark.
  *
- * The "inverted" prop forces the white variant — useful inside dark-colored
- * containers (e.g. the FinalCta block) regardless of the page theme.
+ * The asset is 1090×250 (≈ 4.36:1). We pass those exact intrinsic
+ * dimensions to next/image and lock the rendered size with an inline
+ * `style`, which guarantees the aspect ratio is preserved regardless
+ * of what container constraints the parent has.
  */
 export function BrandLogo({
   width = 150,
@@ -32,16 +33,15 @@ export function BrandLogo({
       ? "/logo-white.png"
       : "/logo-black.png"
 
-  const height = Math.round(width * (250 / 1090))
-
   return (
     <Image
       src={src}
       alt="SharpsB2B"
-      width={width}
-      height={height}
+      width={1090}
+      height={250}
       priority={priority}
       className={className}
+      style={{ width: `${width}px`, height: "auto" }}
     />
   )
 }

@@ -250,6 +250,9 @@
   },
   "footer": {
     "tagline": "Agenzia digitale B2B — Italia & internazionale",
+    "description": "SharpsB2B è l'agenzia digitale che progetta, costruisce e fa crescere store Shopify, siti web, app mobili e campagne paid per brand ambiziosi in Italia e nel mondo. Codice creativo, numeri misurabili, niente fuffa.",
+    "addressTitle": "Sede",
+    "addressLines": ["5830 2nd Street", "Casper, WY 82406", "United States"],
     "rights": "Tutti i diritti riservati.",
     "navTitle": "Naviga",
     "servicesTitle": "Servizi",

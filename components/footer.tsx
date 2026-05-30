@@ -21,11 +21,23 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       {/* Top grid */}
       <div className="px-6 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 border-b-2 border-foreground">
         {/* Brand */}
-        <div className="flex flex-col gap-3">
-          <BrandLogo width={120} className="h-6 w-auto" />
+        <div className="flex flex-col gap-4">
+          <BrandLogo width={110} />
           <p className="text-[11px] font-mono text-muted-foreground leading-relaxed max-w-xs">
-            {dict.footer.tagline}
+            {dict.footer.description}
           </p>
+          <div className="flex flex-col gap-1 pt-2 border-t border-foreground/20 max-w-xs">
+            <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-muted-foreground">
+              {dict.footer.addressTitle}
+            </span>
+            <address className="not-italic text-[11px] font-mono text-muted-foreground leading-relaxed">
+              {dict.footer.addressLines.map((line, i) => (
+                <span key={i} className="block">
+                  {line}
+                </span>
+              ))}
+            </address>
+          </div>
         </div>
 
         {/* Navigate */}

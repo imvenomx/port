@@ -17,10 +17,13 @@ export function organizationJsonLd() {
     email: "hello@sharpsb2b.com",
     address: {
       "@type": "PostalAddress",
-      addressCountry: "IT",
-      addressLocality: "Milano",
+      streetAddress: "5830 2nd Street",
+      addressLocality: "Casper",
+      addressRegion: "WY",
+      postalCode: "82406",
+      addressCountry: "US",
     },
-    areaServed: ["IT", "EU", "WW"],
+    areaServed: ["IT", "EU", "US", "WW"],
     sameAs: [] as string[],
   }
 }
