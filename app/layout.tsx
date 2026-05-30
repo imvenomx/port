@@ -11,7 +11,20 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 })
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sharpsb2b.com"
+// Resilient to misconfiguration: if NEXT_PUBLIC_SITE_URL is missing OR set to
+// an invalid value (placeholder text, missing protocol, etc.), fall back to the
+// production canonical so `new URL()` can't crash the build.
+const FALLBACK_SITE_URL = "https://sharpsb2b.com"
+function resolveSiteUrl(): string {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL
+  if (!raw) return FALLBACK_SITE_URL
+  try {
+    return new URL(raw).toString().replace(/\/$/, "")
+  } catch {
+    return FALLBACK_SITE_URL
+  }
+}
+const SITE_URL = resolveSiteUrl()
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
