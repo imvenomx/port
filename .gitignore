@@ -1,11 +1,34 @@
-# v0 runtime files (should only exist in preview, not in git)
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+.next/
+out/
+build/
+
+# Env
+.env
+.env*.local
+
+# Database
+prisma/*.db
+prisma/*.db-journal
+
+# Generated assets
+public/generated/
+
+# Misc
+.DS_Store
+.vercel
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# v0 runtime files
 __v0_runtime_loader.js
 __v0_devtools.tsx
 __v0_jsx-dev-runtime.ts
-
-# Common ignores
-node_modules/
-.next/
-.env*.local
-.DS_Store
-.vercel

@@ -1,0 +1,261 @@
+{
+  "meta": {
+    "siteName": "SharpsB2B",
+    "tagline": "Agenzia digitale B2B",
+    "defaultDescription": "SharpsB2B è l'agenzia digitale che progetta, sviluppa e gestisce esperienze web, Shopify, WooCommerce, app mobili, automazioni e campagne Meta & Google Ads per aziende ambiziose."
+  },
+  "nav": {
+    "services": "Servizi",
+    "work": "Lavori",
+    "blog": "Blog",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "cta": "Richiedi un preventivo",
+    "login": "Accedi"
+  },
+  "common": {
+    "readMore": "Leggi di più",
+    "viewAll": "Vedi tutti",
+    "viewCase": "Vedi il caso",
+    "nextProject": "Progetto successivo",
+    "back": "Indietro",
+    "loading": "Caricamento…",
+    "errorGeneric": "Qualcosa è andato storto. Riprova.",
+    "minRead": "min di lettura",
+    "placeholder": "Contenuto segnaposto",
+    "draft": "Bozza",
+    "published": "Pubblicato",
+    "noResults": "Nessun risultato",
+    "search": "Cerca",
+    "all": "Tutti"
+  },
+  "home": {
+    "section": "// SECTION: SHARPSB2B",
+    "heroTopLine": "PROGETTA.",
+    "heroBottomLine": "AUTOMATIZZA.",
+    "heroMidLine": "VENDI.",
+    "heroSub": "Siamo l'agenzia digitale che porta i tuoi prodotti online con siti veloci, store e-commerce su misura e campagne che generano ricavi reali.",
+    "heroCta": "Richiedi un preventivo",
+    "heroCtaSecondary": "Scopri i nostri lavori",
+    "servicesLabel": "// SERVICES",
+    "servicesTitle": "Una squadra. Sette discipline.",
+    "servicesSub": "Costruiamo l'intera macchina digitale del tuo brand — dal codice alle conversioni.",
+    "whyLabel": "// WHY_SHARPSB2B",
+    "whyTitle": "Codice creativo, risultati misurabili",
+    "whySub": "Niente template, niente fuffa da agenzia. Solo lavoro su misura, performance reali e un team che risponde davvero.",
+    "whyPoints": {
+      "p1Title": "Tempi che si rispettano",
+      "p1Body": "Roadmap concrete, sprint settimanali, deploy in produzione quando promesso.",
+      "p2Title": "Stack moderno",
+      "p2Body": "Next.js, Shopify Hydrogen, WooCommerce, automazioni serverless. Senza lock-in.",
+      "p3Title": "Bilingue per natura",
+      "p3Body": "Lavoriamo in italiano e in inglese, per clienti che pensano oltre confine.",
+      "p4Title": "Crescita continua",
+      "p4Body": "Non spariamo e basta: misuriamo, ottimizziamo e iteriamo finché i numeri salgono."
+    },
+    "caseStudiesLabel": "// FEATURED_WORK",
+    "caseStudiesTitle": "I lavori che parlano per noi",
+    "caseStudiesSub": "Una selezione di progetti recenti — e-commerce, app, automazioni, brand digitali.",
+    "logosLabel": "// STACK",
+    "blogLabel": "// LATEST_FROM_BLOG",
+    "blogTitle": "Note di studio",
+    "blogSub": "Pensieri, build report e teardown dal team SharpsB2B.",
+    "ctaLabel": "// LET_S_TALK",
+    "ctaTitle": "Pronti a costruire qualcosa di buono?",
+    "ctaSub": "Raccontaci il tuo progetto. Rispondiamo entro 24 ore, in italiano o in inglese.",
+    "ctaButton": "Iniziamo"
+  },
+  "services": {
+    "pageTitle": "Servizi",
+    "pageLead": "Sviluppo, e-commerce, advertising, app e automazione. Tutto sotto un solo tetto — per non far rimbalzare il tuo progetto tra dieci fornitori.",
+    "items": {
+      "web": {
+        "name": "Web Development",
+        "tag": "01",
+        "headline": "Siti veloci, fatti per convertire",
+        "body": "Costruiamo siti aziendali e landing page su misura con Next.js, React e architetture headless. Ottimizzati per Core Web Vitals, SEO e velocità reale di caricamento.",
+        "bullets": [
+          "Siti corporate e landing page",
+          "Architetture headless e API custom",
+          "Performance e Core Web Vitals",
+          "Accessibilità WCAG e SEO tecnico"
+        ]
+      },
+      "shopify": {
+        "name": "Shopify",
+        "tag": "02",
+        "headline": "Store Shopify e gestione end-to-end",
+        "body": "Setup, temi su misura, integrazioni e gestione operativa quotidiana. Da Shopify Basic a Plus, comprese migrazioni e store internazionali multi-valuta.",
+        "bullets": [
+          "Temi e tematizzazioni custom",
+          "Migrazioni da Magento, WooCommerce, Prestashop",
+          "App private, integrazioni ERP/PIM",
+          "Gestione catalogo, ordini, supporto"
+        ]
+      },
+      "wordpress": {
+        "name": "WooCommerce & WordPress",
+        "tag": "03",
+        "headline": "WooCommerce e WordPress, fatti seriamente",
+        "body": "Siti editoriali, portali e shop WooCommerce affidabili — non i soliti template gonfi di plugin. Sicurezza, performance, manutenzione inclusa.",
+        "bullets": [
+          "Temi WordPress su misura",
+          "WooCommerce, abbonamenti, B2B",
+          "Hosting, backup, sicurezza",
+          "Manutenzione e supporto continuativi"
+        ]
+      },
+      "ads": {
+        "name": "Meta & Google Ads",
+        "tag": "04",
+        "headline": "Advertising che si paga da solo",
+        "body": "Strategie full-funnel su Meta e Google Ads. Niente report da 40 pagine: solo creatività, test, e numeri che contano per il tuo business.",
+        "bullets": [
+          "Strategia, setup, gestione",
+          "Creatività e copy a performance",
+          "Tracking server-side e Consent Mode v2",
+          "Reporting chiaro, ROI dichiarato"
+        ]
+      },
+      "apps": {
+        "name": "Mobile Apps",
+        "tag": "05",
+        "headline": "App mobili native e cross-platform",
+        "body": "Sviluppiamo applicazioni iOS e Android — React Native quando ha senso, nativo quando serve davvero. Dal prototipo allo store, con tutto il backend.",
+        "bullets": [
+          "App consumer e B2B",
+          "Backend, API, autenticazione",
+          "Push notifications, analytics, A/B test",
+          "Pubblicazione App Store e Play Store"
+        ]
+      },
+      "automation": {
+        "name": "Business Automation",
+        "tag": "06",
+        "headline": "Automazioni che tolgono lavoro manuale",
+        "body": "Workflow, integrazioni e script che collegano i tuoi strumenti — CRM, ERP, fatturazione, e-commerce — e fanno sparire le attività ripetitive.",
+        "bullets": [
+          "Integrazioni API custom",
+          "n8n, Make, Zapier dove serve",
+          "Bot interni e cron job affidabili",
+          "Documentazione e handover completi"
+        ]
+      },
+      "store": {
+        "name": "Store Management",
+        "tag": "07",
+        "headline": "Gestione operativa del tuo store",
+        "body": "Per chi ha già un e-commerce e vuole farlo crescere senza assumere internamente. Catalogo, ordini, customer care, ottimizzazioni continue.",
+        "bullets": [
+          "Gestione catalogo e prezzi",
+          "Customer care e moderazione",
+          "CRO e A/B test sul checkout",
+          "Reportistica mensile concreta"
+        ]
+      }
+    },
+    "ctaTitle": "Hai un progetto in mente?",
+    "ctaBody": "Raccontaci cosa vuoi costruire. Ti risponde una persona vera, non un funnel automatico.",
+    "ctaButton": "Parliamone"
+  },
+  "work": {
+    "pageTitle": "Lavori",
+    "pageLead": "Una selezione di progetti — alcuni firmati, altri ancora coperti da NDA. I segnaposto qui sotto verranno sostituiti con casi reali a breve.",
+    "filterAll": "Tutti",
+    "noStudies": "Nessun caso studio disponibile.",
+    "problemLabel": "Il problema",
+    "solutionLabel": "La soluzione",
+    "resultsLabel": "Risultati",
+    "servicesLabel": "Servizi",
+    "clientLabel": "Cliente",
+    "galleryLabel": "Gallery",
+    "placeholderNotice": "Questo è un caso studio segnaposto. I dati reali verranno pubblicati prossimamente."
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "pageLead": "Note, build report e teardown dal team SharpsB2B. In italiano e in inglese.",
+    "categoryAll": "Tutte le categorie",
+    "noPosts": "Nessun articolo pubblicato.",
+    "relatedTitle": "Articoli correlati",
+    "shareLabel": "Condividi",
+    "publishedOn": "Pubblicato il",
+    "by": "di"
+  },
+  "about": {
+    "pageTitle": "Chi siamo",
+    "pageLead": "SharpsB2B è un'agenzia digitale italiana che lavora con aziende ambiziose, in Italia e nel mondo.",
+    "storyLabel": "// STORY",
+    "storyTitle": "Nati per costruire, non per vendere fumo",
+    "storyBody": "SharpsB2B è nata dall'idea che un'agenzia debba sporcarsi le mani nel codice tanto quanto nelle conversioni. Mettiamo insieme sviluppatori, marketer e creativi sotto lo stesso tetto, così niente si perde fra brief, sprint e campagne live.",
+    "missionLabel": "// MISSION",
+    "missionTitle": "La nostra missione",
+    "missionBody": "Trasformiamo idee complesse in prodotti digitali che funzionano davvero — veloci, accessibili, e capaci di generare valore misurabile per chi li usa e per chi li commissiona.",
+    "approachLabel": "// APPROACH",
+    "approachTitle": "Come lavoriamo",
+    "approachSteps": {
+      "s1Title": "Discovery",
+      "s1Body": "Una settimana per capire dove sei, dove vuoi andare, cosa è davvero un problema e cosa è solo rumore.",
+      "s2Title": "Build",
+      "s2Body": "Sprint settimanali, demo regolari, codice in produzione invece di slide. Niente big bang.",
+      "s3Title": "Launch",
+      "s3Body": "Lancio coordinato — dev, marketing, ads, contenuti. Quando va live, va live davvero.",
+      "s4Title": "Grow",
+      "s4Body": "Misuriamo, ottimizziamo, iteriamo. Il sito o lo store di partenza è solo il punto zero."
+    },
+    "valuesLabel": "// VALUES",
+    "valuesTitle": "In cosa crediamo",
+    "values": {
+      "v1Title": "Trasparenza brutale",
+      "v1Body": "Numeri, timeline e costi visibili. Senza giri di parole.",
+      "v2Title": "Lavoro su misura",
+      "v2Body": "Zero template-shop. Ogni cliente è un brief diverso.",
+      "v3Title": "Velocità reale",
+      "v3Body": "Performance che si sentono cliccando, non solo nei report.",
+      "v4Title": "Continuità",
+      "v4Body": "Restiamo dopo il lancio. Il rapporto non finisce con la fattura."
+    }
+  },
+  "contact": {
+    "pageTitle": "Contatti",
+    "pageLead": "Raccontaci cosa vuoi costruire. Ti rispondiamo entro 24 ore lavorative.",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Il tuo nome",
+      "email": "Email",
+      "emailPlaceholder": "tu@azienda.com",
+      "company": "Azienda",
+      "companyPlaceholder": "Nome azienda (opzionale)",
+      "service": "Servizio di interesse",
+      "servicePlaceholder": "Seleziona un servizio",
+      "message": "Messaggio",
+      "messagePlaceholder": "Raccontaci il progetto…",
+      "submit": "Invia richiesta",
+      "submitting": "Invio in corso…",
+      "successTitle": "Grazie!",
+      "successBody": "Abbiamo ricevuto il tuo messaggio. Ti rispondiamo entro 24 ore lavorative.",
+      "errorTitle": "Ops",
+      "errorBody": "Non siamo riusciti a inviare il messaggio. Riprova o scrivici direttamente.",
+      "required": "Campo obbligatorio",
+      "invalidEmail": "Inserisci un indirizzo email valido",
+      "minMessage": "Scrivi almeno qualche dettaglio sul progetto",
+      "consent": "Accetto la privacy policy",
+      "consentRequired": "Devi accettare la privacy policy per continuare"
+    },
+    "channels": {
+      "email": "Email",
+      "phone": "Telefono",
+      "office": "Sede"
+    }
+  },
+  "footer": {
+    "tagline": "Agenzia digitale B2B — Italia & internazionale",
+    "rights": "Tutti i diritti riservati.",
+    "navTitle": "Naviga",
+    "servicesTitle": "Servizi",
+    "contactTitle": "Contatti",
+    "legalTitle": "Legale",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "terms": "Termini"
+  }
+}

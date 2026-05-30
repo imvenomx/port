@@ -2,11 +2,12 @@
 
 import { useEffect, useState, useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import Image from "next/image"
+import { SectionLabel } from "@/components/section-label"
+import type { Dictionary } from "@/lib/i18n/getDictionary"
+import type { Locale } from "@/lib/i18n/config"
 
 const ease = [0.22, 1, 0.36, 1] as const
 
-/* ── scramble text reveal ── */
 function ScrambleText({ text, className }: { text: string; className?: string }) {
   const [display, setDisplay] = useState(text)
   const ref = useRef<HTMLSpanElement>(null)
@@ -43,17 +44,11 @@ function ScrambleText({ text, className }: { text: string; className?: string })
   )
 }
 
-/* ── blinking cursor ── */
-function BlinkDot() {
-  return <span className="inline-block h-2 w-2 bg-[#ea580c] animate-blink" />
-}
-
-/* ── live uptime counter ── */
 function UptimeCounter() {
   const [seconds, setSeconds] = useState(0)
-
   useEffect(() => {
-    const base = 31536000 + Math.floor(Math.random() * 1000000)
+    // Simulate "agency uptime" since a fixed founding moment.
+    const base = 31536000 * 2 + Math.floor(Math.random() * 100000)
     setSeconds(base)
     const interval = setInterval(() => setSeconds((s) => s + 1), 1000)
     return () => clearInterval(interval)
@@ -74,14 +69,6 @@ function UptimeCounter() {
   )
 }
 
-/* ── stat block ── */
-const STATS = [
-  { label: "MODELS_DEPLOYED", value: "147" },
-  { label: "EDGE_REGIONS", value: "50+" },
-  { label: "INFERENCE_CALLS", value: "12.8B" },
-  { label: "AVG_LATENCY", value: "4.2ms" },
-]
-
 function StatBlock({ label, value, index }: { label: string; value: string; index: number }) {
   return (
     <motion.div
@@ -101,65 +88,66 @@ function StatBlock({ label, value, index }: { label: string; value: string; inde
   )
 }
 
-/* ── main about section ── */
-export function AboutSection() {
+export function AboutSection({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+  const stats = locale === "it"
+    ? [
+        { label: "PROGETTI_SPEDITI", value: "120+" },
+        { label: "CLIENTI_ATTIVI", value: "32" },
+        { label: "PAESI", value: "8" },
+        { label: "ROAS_MEDIO_ADS", value: "4.7x" },
+      ]
+    : [
+        { label: "PROJECTS_SHIPPED", value: "120+" },
+        { label: "ACTIVE_CLIENTS", value: "32" },
+        { label: "COUNTRIES", value: "8" },
+        { label: "AVG_ADS_ROAS", value: "4.7x" },
+      ]
+
+  const title = locale === "it" ? (
+    <>
+      Costruiamo macchine digitali per <span className="text-[#ea580c]">aziende serie</span>
+    </>
+  ) : (
+    <>
+      We build digital machines for <span className="text-[#ea580c]">serious businesses</span>
+    </>
+  )
+
   return (
     <section className="w-full px-6 py-20 lg:px-12">
-      {/* Section label */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.5, ease }}
-        className="flex items-center gap-4 mb-8"
-      >
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
-          {"// SECTION: ABOUT_SYS.INT"}
-        </span>
-        <div className="flex-1 border-t border-border" />
-        <BlinkDot />
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
-          005
-        </span>
-      </motion.div>
+      <SectionLabel label={dict.home.whyLabel} index="002" blink />
 
-      {/* Two-column layout */}
       <div className="flex flex-col lg:flex-row gap-0 border-2 border-foreground">
-        {/* Left: Image */}
+        {/* Left: Numbers / visual */}
         <motion.div
-          initial={{ opacity: 0, x: -30, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease }}
-          className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-[500px] border-b-2 lg:border-b-0 lg:border-r-2 border-foreground overflow-hidden bg-foreground"
+          className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-[500px] border-b-2 lg:border-b-0 lg:border-r-2 border-foreground bg-foreground text-background overflow-hidden flex flex-col"
         >
-          {/* Image label overlay */}
-          <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-4 py-2 bg-foreground/80 backdrop-blur-sm">
+          <div className="flex items-center justify-between px-4 py-2 border-b-2 border-background/20">
             <span className="text-[10px] tracking-[0.2em] uppercase text-background/60 font-mono">
-              RENDER: isometric_infrastructure.obj
+              MANIFEST.md
             </span>
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#ea580c] font-mono">
               LIVE
             </span>
           </div>
 
-          <Image
-            src="/images/about-isometric.jpg"
-            alt="Isometric view of AI infrastructure with server racks and data pipelines"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            priority
-          />
+          <div className="flex-1 flex items-center justify-center p-8">
+            <div className="font-pixel text-[#ea580c] text-7xl lg:text-9xl tracking-tight leading-none select-none">
+              SB2B
+            </div>
+          </div>
 
-          {/* Bottom image coordinates */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-between px-4 py-2 bg-foreground/80 backdrop-blur-sm">
-            <span className="text-[10px] tracking-[0.2em] uppercase text-background/40 font-mono">
-              {"CAM: -45deg / ISO"}
-            </span>
-            <span className="text-[10px] tracking-[0.2em] uppercase text-background/40 font-mono">
-              {"RES: 2048x2048"}
-            </span>
+          <div className="grid grid-cols-2 gap-0 border-t-2 border-background/20">
+            {stats.slice(0, 2).map((s) => (
+              <div key={s.label} className="border-r-2 last:border-r-0 border-background/20 px-4 py-3 flex flex-col gap-1">
+                <span className="text-[9px] tracking-[0.2em] uppercase text-background/50 font-mono">{s.label}</span>
+                <span className="text-xl font-mono font-bold tracking-tight"><ScrambleText text={s.value} /></span>
+              </div>
+            ))}
           </div>
         </motion.div>
 
@@ -171,19 +159,17 @@ export function AboutSection() {
           transition={{ duration: 0.7, delay: 0.1, ease }}
           className="flex flex-col w-full lg:w-1/2"
         >
-          {/* Header bar */}
           <div className="flex items-center justify-between px-5 py-3 border-b-2 border-foreground">
             <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
-              MANIFEST.md
+              about.md
             </span>
             <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
-              v3.1.0
+              v1.0
             </span>
           </div>
 
-          {/* Content body */}
-          <div className="flex-1 flex flex-col justify-between px-5 py-6 lg:py-8">
-            <div className="flex flex-col gap-6">
+          <div className="flex-1 flex flex-col justify-between px-5 py-6 lg:py-8 gap-6">
+            <div className="flex flex-col gap-5">
               <motion.h2
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -191,51 +177,24 @@ export function AboutSection() {
                 transition={{ duration: 0.5, delay: 0.2, ease }}
                 className="text-2xl lg:text-3xl font-mono font-bold tracking-tight uppercase text-balance"
               >
-                Infrastructure built for
-                <br />
-                <span className="text-[#ea580c]">raw intelligence</span>
+                {title}
               </motion.h2>
 
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ delay: 0.3, duration: 0.5, ease }}
-                className="flex flex-col gap-4"
-              >
-                <p className="text-xs lg:text-sm font-mono text-muted-foreground leading-relaxed">
-                  We engineer the substrate layer that sits between your models
-                  and your users. No abstractions. No magic. Just deterministic
-                  routing, sub-5ms inference, and transparent operational control
-                  across every edge node in the network.
-                </p>
-                <p className="text-xs lg:text-sm font-mono text-muted-foreground leading-relaxed">
-                  Founded by systems engineers who spent a decade building
-                  distributed compute at hyperscale. We believe AI infrastructure
-                  should be inspectable, auditable, and brutally fast.
-                </p>
-              </motion.div>
+              <p className="text-xs lg:text-sm font-mono text-muted-foreground leading-relaxed">
+                {dict.home.whySub}
+              </p>
 
-              {/* Uptime line */}
-              <motion.div
-                initial={{ opacity: 0, scaleX: 0.8 }}
-                whileInView={{ opacity: 1, scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.5, ease }}
-                style={{ transformOrigin: "left" }}
-                className="flex items-center gap-3 py-3 border-t-2 border-b-2 border-foreground"
-              >
+              <div className="flex items-center gap-3 py-3 border-t-2 border-b-2 border-foreground">
                 <span className="h-1.5 w-1.5 bg-[#ea580c]" />
                 <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
                   UPTIME:
                 </span>
                 <UptimeCounter />
-              </motion.div>
+              </div>
             </div>
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-0 mt-6">
-              {STATS.map((stat, i) => (
+            <div className="grid grid-cols-2 gap-0">
+              {stats.map((stat, i) => (
                 <StatBlock key={stat.label} {...stat} index={i} />
               ))}
             </div>

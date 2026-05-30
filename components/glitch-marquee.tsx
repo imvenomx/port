@@ -1,20 +1,32 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { SectionLabel } from "@/components/section-label"
+import type { Dictionary } from "@/lib/i18n/getDictionary"
 
 const ease = [0.22, 1, 0.36, 1] as const
 
-const PARTNERS = [
-  "OPENAI",
-  "ANTHROPIC",
-  "GOOGLE",
-  "META",
-  "NVIDIA",
-  "MISTRAL",
-  "COHERE",
-  "STABILITY",
-  "DEEPMIND",
-  "HUGGING FACE",
+const STACK = [
+  "NEXT.JS",
+  "REACT",
+  "TYPESCRIPT",
+  "SHOPIFY",
+  "HYDROGEN",
+  "WOOCOMMERCE",
+  "WORDPRESS",
+  "META ADS",
+  "GOOGLE ADS",
+  "GA4",
+  "STRIPE",
+  "KLAVIYO",
+  "POSTGRES",
+  "VERCEL",
+  "AWS",
+  "REACT NATIVE",
+  "FRAMER MOTION",
+  "TAILWIND",
+  "FIGMA",
+  "N8N",
 ]
 
 function LogoBlock({ name, glitch }: { name: string; glitch: boolean }) {
@@ -24,34 +36,20 @@ function LogoBlock({ name, glitch }: { name: string; glitch: boolean }) {
         glitch ? "animate-glitch" : ""
       }`}
     >
-      <span className="text-sm font-mono tracking-[0.15em] uppercase text-foreground whitespace-nowrap">
+      <span className="text-sm font-mono tracking-[0.18em] uppercase text-foreground whitespace-nowrap">
         {name}
       </span>
     </div>
   )
 }
 
-export function GlitchMarquee() {
-  const glitchIndices = [2, 6]
+export function GlitchMarquee({ dict }: { dict: Dictionary }) {
+  const glitchIndices = [3, 7, 14]
 
   return (
     <section className="w-full py-16 px-6 lg:px-12">
-      {/* Section label */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.5, ease }}
-        className="flex items-center gap-4 mb-8"
-      >
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-          {"// PARTNERS: MODEL_ECOSYSTEM"}
-        </span>
-        <div className="flex-1 border-t border-border" />
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">008</span>
-      </motion.div>
+      <SectionLabel label={dict.home.logosLabel} index="006" />
 
-      {/* Marquee */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -60,11 +58,11 @@ export function GlitchMarquee() {
         className="overflow-hidden border-2 border-foreground"
       >
         <div className="flex animate-marquee" style={{ width: "max-content" }}>
-          {[...PARTNERS, ...PARTNERS].map((name, i) => (
+          {[...STACK, ...STACK].map((name, i) => (
             <LogoBlock
               key={`${name}-${i}`}
               name={name}
-              glitch={glitchIndices.includes(i % PARTNERS.length)}
+              glitch={glitchIndices.includes(i % STACK.length)}
             />
           ))}
         </div>

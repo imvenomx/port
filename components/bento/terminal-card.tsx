@@ -1,26 +1,44 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import type { Locale } from "@/lib/i18n/config"
 
-const LOG_LINES = [
-  "> Initializing AI pipeline...",
-  "> Loading model weights: 2.4GB",
-  "> Connecting to data stream...",
-  "> Analyzing codebase...",
-  "> Running inference: batch_01",
-  "> Optimization pass: 1/3",
-  "> Optimization pass: 2/3",
-  "> Optimization pass: 3/3",
-  "> 98% Optimized",
-  "> Deploying to edge nodes...",
-  "> Status: OPERATIONAL",
-  "> Latency: 12ms p99",
-  "> Throughput: 14.2k req/s",
-  "> Memory: 847MB / 2048MB",
+const LOG_LINES_IT = [
+  "> brief.received — Modaviva",
+  "> design.kickoff scheduled",
+  "> figma:sync ok (12 frames)",
+  "> shopify:theme building...",
+  "> theme.build complete — 1.2s",
+  "> meta_ads.creatives queued (8)",
+  "> tracking.server_side ok",
+  "> lighthouse: 98 / 100 / 100 / 95",
+  "> deploy.preview ready",
+  "> client.review > approved",
+  "> deploy.production live",
+  "> automation.email_flow armed",
+  "> ads.campaign live — ROAS target 3.5x",
   "> --------- CYCLE COMPLETE ---------",
 ]
 
-export function TerminalCard() {
+const LOG_LINES_EN = [
+  "> brief.received — Modaviva",
+  "> design.kickoff scheduled",
+  "> figma:sync ok (12 frames)",
+  "> shopify:theme building...",
+  "> theme.build complete — 1.2s",
+  "> meta_ads.creatives queued (8)",
+  "> tracking.server_side ok",
+  "> lighthouse: 98 / 100 / 100 / 95",
+  "> deploy.preview ready",
+  "> client.review > approved",
+  "> deploy.production live",
+  "> automation.email_flow armed",
+  "> ads.campaign live — ROAS target 3.5x",
+  "> --------- CYCLE COMPLETE ---------",
+]
+
+export function TerminalCard({ locale }: { locale: Locale }) {
+  const lines_src = locale === "it" ? LOG_LINES_IT : LOG_LINES_EN
   const [lines, setLines] = useState<string[]>([])
   const [currentLine, setCurrentLine] = useState(0)
 
@@ -28,20 +46,18 @@ export function TerminalCard() {
     const interval = setInterval(() => {
       setCurrentLine((prev) => {
         const next = prev + 1
-        if (next >= LOG_LINES.length) {
+        if (next >= lines_src.length) {
           setLines([])
           return 0
         }
-        setLines((l) => [...l.slice(-8), LOG_LINES[next]])
+        setLines((l) => [...l.slice(-8), lines_src[next]])
         return next
       })
-    }, 600)
+    }, 700)
 
-    // Add first line
-    setLines([LOG_LINES[0]])
-
+    setLines([lines_src[0]])
     return () => clearInterval(interval)
-  }, [])
+  }, [lines_src])
 
   return (
     <div className="flex flex-col h-full">
@@ -50,7 +66,7 @@ export function TerminalCard() {
         <span className="h-2 w-2 bg-foreground" />
         <span className="h-2 w-2 border border-foreground" />
         <span className="ml-auto text-[10px] tracking-widest text-muted-foreground uppercase">
-          terminal.sys
+          sharps.pipeline
         </span>
       </div>
       <div className="flex-1 bg-foreground p-4 overflow-hidden">
@@ -64,7 +80,7 @@ export function TerminalCard() {
               {line}
             </span>
           ))}
-          <span className="text-xs text-[#ea580c] font-mono animate-blink">{"_"}</span>
+          <span className="text-xs text-[#ea580c] font-mono animate-blink">_</span>
         </div>
       </div>
     </div>

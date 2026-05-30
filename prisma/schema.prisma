@@ -1,0 +1,70 @@
+// SharpsB2B database schema
+// SQLite for development; swap datasource to PostgreSQL for production.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Article {
+  id           String    @id @default(cuid())
+  slug         String    @unique
+  status       String    @default("draft") // "draft" | "published"
+  publishedAt  DateTime?
+  category     String?
+  tags         String?   // comma-separated for SQLite simplicity
+  coverImage   String?
+
+  metaTitleIt  String?
+  metaDescIt   String?
+  metaTitleEn  String?
+  metaDescEn   String?
+  ogImage      String?
+
+  titleIt      String
+  excerptIt    String?
+  bodyIt       String?
+
+  titleEn      String?
+  excerptEn    String?
+  bodyEn       String?
+
+  // Future locales (e.g. Dutch) attach here without code changes elsewhere.
+  // titleNl, excerptNl, bodyNl, metaTitleNl, metaDescNl
+
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([status, publishedAt])
+  @@index([category])
+}
+
+model CaseStudy {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  isPlaceholder Boolean  @default(false)
+  client        String
+  services      String   // comma-separated service ids
+  coverImage    String
+  gallery       String?  // comma-separated image paths
+
+  titleIt       String
+  problemIt     String
+  solutionIt    String
+  resultsIt     String
+
+  titleEn       String?
+  problemEn     String?
+  solutionEn    String?
+  resultsEn     String?
+
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([order])
+}
