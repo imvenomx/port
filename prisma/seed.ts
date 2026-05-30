@@ -10,6 +10,7 @@ const caseStudies = [
     services: "shopify,ads,store",
     coverImage: "/work/olympios-cover.png",
     gallery: "/work/olympios-cover.png",
+    liveUrl: "https://www.olympios.shop",
     order: 1,
     titleIt: "Olympios — store Shopify per un brand fashion DTC",
     problemIt:
@@ -33,6 +34,7 @@ const caseStudies = [
     services: "web,shopify,ads,automation",
     coverImage: "/work/afflelou-cover.png",
     gallery: "/work/afflelou-cover.png",
+    liveUrl: "https://www.afflelou.com/",
     order: 2,
     titleIt: "Alain Afflelou — esperienza e-commerce per ottica e acustica",
     problemIt:
@@ -56,6 +58,7 @@ const caseStudies = [
     services: "shopify,web,ads,store",
     coverImage: "/work/nerogiardini-cover.png",
     gallery: "/work/nerogiardini-cover.png",
+    liveUrl: "https://nerogiardini.it/",
     order: 3,
     titleIt: "NeroGiardini — migrazione su Shopify Plus per il brand calzaturiero",
     problemIt:
@@ -79,6 +82,7 @@ const caseStudies = [
     services: "shopify,web,automation,store",
     coverImage: "/work/labocityagdal-cover.png",
     gallery: "/work/labocityagdal-cover.png",
+    liveUrl: "https://www.labocityagdal.com/",
     order: 4,
     titleIt: "Labo City Agdal — e-commerce B2B per forniture di laboratorio",
     problemIt:

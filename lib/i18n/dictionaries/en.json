@@ -169,7 +169,8 @@
     "servicesLabel": "Services",
     "clientLabel": "Client",
     "galleryLabel": "Gallery",
-    "placeholderNotice": "This is a placeholder case study. Real data will be published shortly."
+    "placeholderNotice": "This is a placeholder case study. Real data will be published shortly.",
+    "visitStore": "Visit the store"
   },
   "blog": {
     "pageTitle": "Blog",

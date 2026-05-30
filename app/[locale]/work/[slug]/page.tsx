@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowRight, ArrowLeft } from "lucide-react"
+import { ArrowRight, ArrowLeft, ExternalLink } from "lucide-react"
 import { isLocale, localizedPath, locales } from "@/lib/i18n/config"
 import { getDictionary } from "@/lib/i18n/getDictionary"
 import { getCaseStudyBySlug, getAdjacentCaseStudy, localizedCaseStudy, getAllCaseStudies } from "@/lib/content/case-studies"
@@ -102,7 +102,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
             <h1 className="font-pixel text-4xl sm:text-6xl lg:text-7xl tracking-tight text-foreground leading-[1] text-balance">
               {lang.title.toUpperCase()}
             </h1>
-            <div className="flex flex-wrap gap-2 mt-2">
+            <div className="flex flex-wrap items-center gap-2 mt-2">
               {item.services.map((s) => (
                 <span
                   key={s}
@@ -111,6 +111,19 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
                   {s}
                 </span>
               ))}
+              {item.liveUrl && (
+                <a
+                  href={item.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="group ml-1 flex items-center bg-foreground text-background text-[10px] font-mono tracking-[0.18em] uppercase hover:bg-[#ea580c] transition-colors"
+                >
+                  <span className="flex items-center justify-center w-7 h-7 bg-[#ea580c] group-hover:bg-background group-hover:text-foreground transition-colors">
+                    <ExternalLink size={12} strokeWidth={2} />
+                  </span>
+                  <span className="px-3 py-1.5">{dict.work.visitStore}</span>
+                </a>
+              )}
             </div>
           </div>
         </section>

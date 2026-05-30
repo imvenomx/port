@@ -10,6 +10,7 @@ export type CaseStudyView = {
   services: string[]
   coverImage: string
   gallery: string[]
+  liveUrl: string | null
   order: number
   it: { title: string; problem: string; solution: string; results: string }
   en: { title: string; problem: string; solution: string; results: string }
@@ -23,6 +24,7 @@ function rowToView(row: {
   services: string
   coverImage: string
   gallery: string | null
+  liveUrl: string | null
   order: number
   titleIt: string
   problemIt: string
@@ -41,6 +43,7 @@ function rowToView(row: {
     services: row.services ? row.services.split(",").map((s) => s.trim()).filter(Boolean) : [],
     coverImage: row.coverImage,
     gallery: row.gallery ? row.gallery.split(",").map((s) => s.trim()).filter(Boolean) : [],
+    liveUrl: row.liveUrl,
     order: row.order,
     it: {
       title: row.titleIt,

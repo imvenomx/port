@@ -169,7 +169,8 @@
     "servicesLabel": "Servizi",
     "clientLabel": "Cliente",
     "galleryLabel": "Gallery",
-    "placeholderNotice": "Questo è un caso studio segnaposto. I dati reali verranno pubblicati prossimamente."
+    "placeholderNotice": "Questo è un caso studio segnaposto. I dati reali verranno pubblicati prossimamente.",
+    "visitStore": "Visita lo store"
   },
   "blog": {
     "pageTitle": "Blog",

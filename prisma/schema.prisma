@@ -51,6 +51,7 @@ model CaseStudy {
   services      String   // comma-separated service ids
   coverImage    String
   gallery       String?  // comma-separated image paths
+  liveUrl       String?  // public URL to the deployed client site
 
   titleIt       String
   problemIt     String
