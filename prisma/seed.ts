@@ -4,28 +4,28 @@ const prisma = new PrismaClient()
 
 const caseStudies = [
   {
-    slug: "olympios-fashion-store",
+    slug: "piramis-group-corporate-platform",
     isPlaceholder: false,
-    client: "Olympios",
-    services: "shopify,ads,store",
-    coverImage: "/work/olympios-cover.png",
-    gallery: "/work/olympios-cover.png",
-    liveUrl: "https://www.olympios.shop",
+    client: "Piramis Group",
+    services: "web,automation,store",
+    coverImage: "/work/piramis-cover.png",
+    gallery: "/work/piramis-cover.png",
+    liveUrl: "https://piramis.previewb2b.com",
     order: 1,
-    titleIt: "Olympios — store Shopify per un brand fashion DTC",
+    titleIt: "Piramis Group — piattaforma corporate multi-servizio",
     problemIt:
-      "Il brand stava lanciando una nuova linea fashion DTC senza una piattaforma e-commerce dedicata e con zero presenza online consolidata. Serviva uno store credibile, veloce e capace di scalare le campagne paid sin dal primo giorno.",
+      "Piramis Group offre un ventaglio di servizi B2B molto ampio — connettività, privacy & cyber security, noleggio operativo, digital & web marketing, kiosko, assistenza — con una Academy interna, un'area carriere e uno shop dedicato. Il sito legacy non riusciva a comunicare l'idea di \"un unico partner per tante possibilità\" e disperdeva le richieste tra business unit diverse.",
     solutionIt:
-      "Setup Shopify con tema custom incentrato sulla brand identity \"effortless style\", schede prodotto ad alta conversione, automazioni Klaviyo per recupero carrelli e welcome flow, integrazione con creator content e campagne Meta Ads full-funnel per il lancio.",
+      "Sito corporate custom con architettura modulare per le sei business unit, narrazione unificata attorno al claim \"Creiamo insieme il futuro della tua azienda\", sezioni dedicate ad Academy, Sostenibilità e Carriere, shop integrato per i prodotti diretti, form di contatto qualificati con routing automatico al servizio competente e CRM, tracking server-side per misurare la performance di ogni linea.",
     resultsIt:
-      "Lancio sostenuto da 0 a un flusso ordini stabile nelle prime 6 settimane · conversion rate medio del 2,8% · ROAS Meta superiore a 3.4x già al secondo mese · open rate dei flussi automatici sopra il 45%.",
-    titleEn: "Olympios — Shopify storefront for a DTC fashion brand",
+      "Identità digitale coerente per oltre 55.000 aziende clienti · richieste in ingresso pre-qualificate e instradate automaticamente alla business unit giusta · riduzione del tempo medio di risposta sulle richieste commerciali · presenza unificata di brand, prodotti e Academy in un'unica piattaforma.",
+    titleEn: "Piramis Group — multi-service corporate platform",
     problemEn:
-      "The brand was launching a brand-new DTC fashion line with no dedicated e-commerce platform and no consolidated online presence. They needed a credible, fast store ready to scale paid campaigns from day one.",
+      "Piramis Group offers a wide range of B2B services — connectivity, privacy & cyber security, operating leasing, digital & web marketing, kiosk, IT support — alongside an in-house Academy, careers area and dedicated shop. Their legacy site failed to communicate the \"one partner, many possibilities\" proposition and scattered inbound enquiries across business units.",
     solutionEn:
-      "Shopify setup with a custom theme tuned around the \"effortless style\" brand identity, conversion-focused product pages, Klaviyo automations for cart recovery and welcome flows, creator-content integration, and a full-funnel Meta Ads launch.",
+      "Custom corporate site with a modular architecture for the six business units, a unified narrative around the \"Let's build the future of your business together\" claim, dedicated Academy, Sustainability and Careers sections, integrated shop for direct products, qualified contact forms with automatic routing to the right service and CRM, and server-side tracking to measure each line's performance.",
     resultsEn:
-      "Launched from zero to a steady order flow within 6 weeks · 2.8% average conversion rate · Meta ROAS above 3.4× by month two · automated-flow open rate above 45%.",
+      "Consistent digital identity for over 55,000 client companies · inbound requests pre-qualified and automatically routed to the right business unit · reduced average response time on commercial enquiries · brand, products and Academy unified on a single platform.",
   },
   {
     slug: "afflelou-eyewear-platform",
@@ -98,6 +98,54 @@ const caseStudies = [
       "Shopify storefront with a structured catalog (categories, brands, certifications), product pages enriched with PDF datasheets and material safety datasheets, a B2B quote-request system wired into the CRM, custom pricing tiers for institutional buyers, and automated order confirmations + shipment tracking.",
     resultsEn:
       "Online catalog of over 5,000 SKUs with full technical data · quote requests handled in under 2 hours (vs 1–2 days) · institutional-customer onboarding time down 70% · solid francophone organic presence on key industry terms.",
+  },
+  {
+    slug: "lucapellicari-personal-brand",
+    isPlaceholder: false,
+    client: "Luca Pellicari",
+    services: "web,automation",
+    coverImage: "/work/lucapellicari-cover.png",
+    gallery: "/work/lucapellicari-cover.png",
+    liveUrl: "https://www.lucapellicari.it",
+    order: 5,
+    titleIt: "Luca Pellicari — sito personal brand per la Comunicazione Alpha",
+    problemIt:
+      "Luca Pellicari aveva bisogno di un sito che traducesse la sua identità di formatore — disciplina, coraggio, identità — in una presenza online coerente, capace di posizionarlo come autorità nel proprio metodo di Comunicazione Alpha e di convertire il pubblico in iscritti a corsi e percorsi 1:1.",
+    solutionIt:
+      "Sito custom mobile-first con narrazione cinematografica (hero video, sezioni \"Le origini\", team, percorsi, blog), copywriting orientato al posizionamento, sistema di lead capture per richieste corsi, integrazione con il CRM per il follow-up automatico e setup SEO tecnico per le keyword di brand e di metodo.",
+    resultsIt:
+      "Identità digitale allineata al brand offline · tempo medio sulla home oltre 1m20s · crescita a doppia cifra dei contatti qualificati per i percorsi formativi nei primi 3 mesi · posizionamento organico stabile sulle keyword di metodo (\"Comunicazione Alpha\").",
+    titleEn: "Luca Pellicari — personal brand website for Comunicazione Alpha",
+    problemEn:
+      "Luca Pellicari needed a website that translated his identity as a trainer — discipline, courage, identity — into a coherent online presence, capable of positioning him as the authority on his Comunicazione Alpha method and converting visitors into course and 1:1 program enquiries.",
+    solutionEn:
+      "Custom mobile-first site with cinematic storytelling (hero video, \"Origins\", team, programs, blog sections), positioning-driven copywriting, lead-capture system for course enquiries, CRM integration for automated follow-up, and technical SEO setup for brand and method keywords.",
+    resultsEn:
+      "Digital identity fully aligned with the offline brand · average time on homepage above 1m20s · double-digit growth in qualified leads for training programs in the first 3 months · stable organic ranking on method keywords (\"Comunicazione Alpha\").",
+  },
+  {
+    slug: "borgo-machetto-luxury-resort",
+    isPlaceholder: false,
+    client: "Borgo Machetto",
+    services: "web,store,automation",
+    coverImage: "/work/borgo-machetto-cover.png",
+    gallery: "/work/borgo-machetto-cover.png",
+    liveUrl: "https://borgo.previewb2b.com",
+    order: 6,
+    titleIt: "Borgo Machetto — sito e prenotazioni per il resort di lusso",
+    problemIt:
+      "Borgo Machetto è una struttura ricettiva di lusso che integra B&B, eventi privati, business meeting, team building e parco golf. Serviva un sito capace di raccontare l'atmosfera del luogo (\"dove lusso e natura si incontrano\"), gestire la prenotazione diretta delle camere e canalizzare richieste eventi e wedding senza dispersione tra le varie offerte.",
+    solutionIt:
+      "Sito multi-sezione (storia, camere, eventi, parco golf, blog, contatti) con direzione fotografica e video coerente, motore di prenotazione diretta integrato, form dedicati per eventi/wedding/team building con routing automatico alle persone giuste, ottimizzazione mobile e tracking server-side per attribuire correttamente le prenotazioni.",
+    resultsIt:
+      "Prenotazioni dirette in crescita con riduzione della dipendenza dalle OTA · richieste eventi separate per tipologia e gestite in meno di 24h · aumento del tempo medio sulla pagina camere · esperienza mobile coerente con il posizionamento luxury del brand.",
+    titleEn: "Borgo Machetto — website and bookings for the luxury resort",
+    problemEn:
+      "Borgo Machetto is a luxury hospitality venue combining B&B, private events, business meetings, team building and a golf park. They needed a website able to convey the atmosphere of the place (\"where luxury and nature meet\"), handle direct room bookings, and channel events and wedding enquiries without confusion across offerings.",
+    solutionEn:
+      "Multi-section site (story, rooms, events, golf park, blog, contacts) with consistent photo and video art direction, integrated direct-booking engine, dedicated forms for events/weddings/team building with automated routing to the right people, mobile-first optimisation, and server-side tracking for accurate booking attribution.",
+    resultsEn:
+      "Direct bookings up with reduced OTA dependency · event enquiries separated by type and handled in under 24h · increased average time on the rooms page · mobile experience aligned with the brand's luxury positioning.",
   },
 ] as const
 
