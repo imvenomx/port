@@ -5,7 +5,7 @@ import { defaultLocale, isLocale, locales, routes, type Locale } from "@/lib/i18
 const PUBLIC_FILE = /\.[^/]+$/
 
 export const config = {
-  matcher: ["/((?!api|_next|_vercel|favicon.ico|robots.txt|sitemap.xml|generated|images|placeholder.*).*)"],
+  matcher: ["/((?!api|propositions|_next|_vercel|favicon.ico|robots.txt|sitemap.xml|generated|images|placeholder.*).*)"],
 }
 
 const fsKeyForRouteKey: Record<keyof typeof routes, string> = {
